@@ -1,34 +1,27 @@
-// 1. Make the function deck_o_cards assemble an array of cards using the provided suits and values arrays.
-// Each card in the deck should be an object formatted as: {suit: 'hearts', value: 'A'}
-function deck_o_cards() {
+
+var deckOfCards = function() {
+
   var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
   var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
   var cards = []; // deck
-  var shuffledCards = []; // deck shuffled
 
-  // Make 52 card objects and store them in the "cards" array
-  // Hint: use 2 for loops
+///////////////////////// make the array ///////////////////
 
 
-  // 2. Shuffle the cards
-  // Hint: shuffle function is already defined below
+    for (i=0; i < suits.length; i++) {
+      var newSuit = suits[i];
+          for(a=0; a < values.length; a++) {
+              var newValue = values[a];
+              var newCard = {suit: newSuit, value: newValue};
+              cards.push(newCard);
+          }
 
+    }
 
-  // Pull the top card from the newly shuffledCards
+///////////////// shuffle funciton not yet invoked ///////////////
 
-
-  // 3. Print the results:
-  // "The deck has {n} cards"
-  // "The top card is the {value} of {suit}"
-
-}
-
-
-
-// Fisher-Yates Shuffle
-// http://stackoverflow.com/a/6274398
-function shuffle(array) {
+    function shuffle(array) {
     var counter = array.length, temp, index;
 
     // While there are elements in the array
@@ -46,4 +39,34 @@ function shuffle(array) {
     }
 
     return array;
+    }
+
+//////////////need to convert an object (for top card) to a string becuase if////////////////////////////
+///////you return or console.log "the top card is " + shuffledDeck[0] it returns [object Object] ////////
+//////is the top card. This will be used shortly below /////////////////////////////////////////////////
+////// ***ref: http://stackoverflow.com/questions/5612787/converting-an-object-to-a-string ****////////
+    function convert (obj) {
+    var str = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str += p + '::' + obj[p];
+        }
+    }
+    return str;
 }
+
+
+//// Invoke functions below, first created a new variable to represent the result of shuffle(cards)/////
+
+
+   var shuffleDeck = shuffle(cards);
+   var object = convert(shuffleDeck[0]);
+   return object + " is the top card out of " + shuffleDeck.length + " cards";
+   /////// return statement^^^ is able to right the object as string with convert() function
+   ////// that is represented with the variable object.
+}
+
+//// call mastetr function /////
+
+deckOfCards();
+

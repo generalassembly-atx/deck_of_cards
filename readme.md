@@ -12,3 +12,7 @@ Time for a game… but first we'll need a deck of playing cards. Use `deck-o-car
 ## Bonus
 
 * Make a new array that pulls the top 5 cards and gives you a hand of poker!!
+
+## Licensing
+All content is licensed under a CC­BY­NC­SA 4.0 license.
+All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.

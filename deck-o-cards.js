@@ -7,6 +7,25 @@ function deck_o_cards() {
   var cards = []; // deck
   var shuffledCards = []; // deck shuffled
 
+  for(var i = 0; i < suits.length; i++) {
+  	// console.log(suits[i]);
+  		for(var j = 0; j < values.length; j++) {
+  			// console.log(values[j]);
+  		// console.log(suits[i], suits[j]);
+
+  	var closer = {
+  		suit: suits[i],
+  		value: values[j]
+
+  	};
+
+  	cards.push(closer);
+  		}
+	}
+	console.log(cards);
+}
+deck_o_cards();
+
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
 
@@ -28,8 +47,8 @@ function deck_o_cards() {
 
 // Fisher-Yates Shuffle
 // http://stackoverflow.com/a/6274398
-function shuffle(array) {
-    var counter = array.length, temp, index;
+function shuffle(cards) {
+    var counter = cards.length, temp, index;
 
     // While there are elements in the array
     while (counter > 0) {

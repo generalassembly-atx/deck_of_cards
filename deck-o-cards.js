@@ -6,29 +6,43 @@ function deck_o_cards() {
   var cards = []; // deck
   var shuffledCards = []; // deck shuffled
 
-  for (var s = 0; s < suits.length; s++) {
-    //console.log(values[i]);
-  for (var v = 0; v < values.length; v++) {
-      cards = (v+1, 'suits: ' + suits[s] + ' , ' + 'value: ' + values[v]);
-      console.log(cards);
+  for (var i = 0; i < suits.length; i++) {
+    var card = {};
+    for (var j = 0; j < values.length; j++) {
+      // card.suit = suits[i];
+      // card['value'] = values[j];
+      card = {
+        suit: suits[i],
+        value: values[j]
+      };
+      cards.push(card);
+      // console.log(card);
     }
   }
-  function shuffle(cards) {
-      var counter = cards.length, temp, index;
-      while (counter > 0) {
-          index = Math.floor(Math.random() * counter);
-          counter--;
-          temp = cards[counter];
-          cards[counter] = cards[index];
-          cards[index] = temp;
+  var shuffledCards = shuffle(cards);
+  document.write("Seans magical deck has " + cards.length + " cards. The top card is the " + cards[0].value + " of " + cards[0].suit + ".");
+}
 
-      }
-      return cards;
+// Fisher-Yates Shuffle
+// http://stackoverflow.com/a/6274398
+function shuffle(array) {
+  var counter = array.length, temp, index;
 
+  // While there are elements in the array
+  while (counter > 0) {
+      // Pick a random index
+      index = Math.floor(Math.random() * counter);
 
+      // Decrease counter by 1
+      counter--;
+
+      // And swap the last element with it
+      temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
   }
-  console.log('The deck has ' + cards.length + ' cards');
-  console.log("The two top cards = " + cards);
+
+  return array;
 }
 
 deck_o_cards();

@@ -6,44 +6,50 @@ function deck_o_cards() {
 
   var cards = []; // deck
   var shuffledCards = []; // deck shuffled
-
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
-
-
+  values.forEach(function(value) {
+    suits.forEach(function(suit) {
+      cards.push(value + ' of ' + suit);
+    })
+  })
+  console.log(cards);
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
-
-
+  shuffle(cards);
+  console.log(cards);
   // Pull the top card from the newly shuffledCards
-
+  topCard = cards.shift();
 
   // 3. Print the results:
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
-
+  pokerDeck = cards;
+  var pokerHand = pokerDeck.splice(0, 5);
+  console.log(pokerHand);
+  console.log('this deck has ' + cards.length + ' cards');
+  console.log('The top card is the ' + topCard);
 }
-
 
 
 // Fisher-Yates Shuffle
 // http://stackoverflow.com/a/6274398
 function shuffle(array) {
-    var counter = array.length, temp, index;
+  var counter = array.length, temp, index;
+  // While there are elements in the array
+  while (counter > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * counter);
 
-    // While there are elements in the array
-    while (counter > 0) {
-        // Pick a random index
-        index = Math.floor(Math.random() * counter);
+    // Decrease counter by 1
+    counter--;
 
-        // Decrease counter by 1
-        counter--;
+    // And swap the last element with it
+    temp = array[counter];
+    array[counter] = array[index];
+    array[index] = temp;
+  }
 
-        // And swap the last element with it
-        temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
-    }
-
-    return array;
+  return array;
 }
+deck_o_cards();

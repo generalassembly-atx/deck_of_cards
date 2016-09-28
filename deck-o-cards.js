@@ -11,18 +11,43 @@ function deck_o_cards() {
   // Hint: use 2 for loops
 
 
+
+  for (var value in values) {
+    for (var suit in suits) {
+
+    var cardObject = {}
+
+    cardObject['value']= values[value];
+    cardObject['suit']=suits[suit];
+    cards.push(cardObject);
+  }}
+
+
+
+  console.log(cards);
+
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
 
+  shuffle(cards);
 
   // Pull the top card from the newly shuffledCards
 
+  topCard = cards.shift();
 
   // 3. Print the results:
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
 
-}
+  console.log("The deck has " + cards.length + " cards.")
+  console.log("The top card is the " + topCard.value + " of " + topCard.suit + ".");
+
+  var pokerHand = [];
+  pokerHand = cards.splice(0,5);
+
+  console.log("Now a poker hand...");
+  console.log(pokerHand);
+
 
 
 
@@ -47,3 +72,9 @@ function shuffle(array) {
 
     return array;
 }
+
+}
+
+
+
+deck_o_cards();

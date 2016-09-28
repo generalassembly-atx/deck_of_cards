@@ -30,7 +30,7 @@ function deck_o_cards() {
   // 3. Print the results:
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
-console.log("The deck has " + cards.length + "cards." );
+console.log("The deck has " + cards.length + " cards left in the deck." );
 console.log("The top card is the " +pulledCard.value + " of " + pulledCard.suit + ".");
 
 }

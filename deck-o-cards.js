@@ -19,13 +19,12 @@ function deck_o_cards() {
   shuffle(cards);
   console.log(cards);
   // Pull the top card from the newly shuffledCards
-
+  topCard = cards.shift();
 
   // 3. Print the results:
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
   pokerDeck = cards;
-  topCard = cards.shift();
   var pokerHand = pokerDeck.splice(0, 5);
   console.log(pokerHand);
   console.log('this deck has ' + cards.length + ' cards');
@@ -36,8 +35,7 @@ function deck_o_cards() {
 // Fisher-Yates Shuffle
 // http://stackoverflow.com/a/6274398
 function shuffle(array) {
-  var counter = array.length,
-    temp, index;
+  var counter = array.length, temp, index;
   // While there are elements in the array
   while (counter > 0) {
     // Pick a random index

@@ -5,25 +5,42 @@ function deck_o_cards() {
   var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
   var cards = []; // deck
-  var shuffledCards = []; // deck shuffled
+
+
 
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
+  for (var i = 0; i < suits.length; i++) {
+      // console.log( suits[i]);
+      var card = {}
+      for (var j = 0; j < values.length; j++){
+        // console.log(values[j]);
+        card = {
+          suit: suits[i],
+          value: values[j]
+        }
+        // console.log(card);
+        cards.push(card);
+      }
+    }
 
 
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
-
-
+var shuffledCards = shuffle(cards);
+ //var shuffledCards = shuffle(cards); // deck shuffled
+    // console.log(cards);
   // Pull the top card from the newly shuffledCards
-
+// return (cards[0]);
 
   // 3. Print the results:
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
-
+console.log("The deck has 52 cards")
+console.log("The top card is the " + + " of ")
 }
 
+deck_o_cards();
 
 
 // Fisher-Yates Shuffle

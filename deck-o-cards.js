@@ -4,8 +4,58 @@ function deck_o_cards() {
   var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
   var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
-  var cards = []; // deck
-  var shuffledCards = []; // deck shuffled
+  var cards = [
+    {
+      'hearts' : 'Ace',
+      'hearts' : 'King',
+
+    }
+
+  ]; <---I feel like i want to populate that array with all the 52 cards writng them as strings for their two values
+
+  // deck //<----- Cards Array, 'deck', 52 cards, 13 * 4
+  var shuffledCards = []; // deck shuffled//<-----shuffled array, 'shuffled'
+
+
+  function card(value, suits) {}//<------Object
+  this.value = value;
+  this.suits = suits;
+}
+
+function deck_o_cards
+ this.value=[2,3,4,5,6,7,8,9,10,'jack','queen','king','ace']
+
+ for(var i=0; i<this.value.length; i++){
+   for(var n=0, n<this.suits.length; n++){
+     cards.push(newcard(i +1, this.value[i].this.suits[n]));
+   }
+ }
+
+ console.log(deck_o_cards())
+  console.log(shuffleArray)
+
+
+  //array.shift
+  function shuffle(array) {
+      var counter = array.length, temp, index;  //<----these are the cards?
+
+      // While there are elements in the array
+      while (counter > 0) {
+          // Pick a random index
+          index = Math.floor(Math.random() * counter);
+
+          // Decrease counter by 1
+          counter--;
+
+          // And swap the last element with it
+          temp = array[counter];
+          array[counter] = array[index];
+          array[index] = temp;
+      }
+
+      return array;
+  }
+
 
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops

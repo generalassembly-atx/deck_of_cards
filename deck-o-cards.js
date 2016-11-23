@@ -11,7 +11,7 @@ function deck_o_cards() {
 
   var cards = []; // deck
   var shuffledCards = []; // deck shuffled
-  
+
 
 
   // Make 52 card objects and store them in the "cards" array
@@ -28,6 +28,32 @@ for (var i=0;i < this.values.length;i++){
 
 cards = deck_o_cards();
 
+// the class function -------------------------------------------------
+// function deck_o_cards() {
+//   values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
+//   suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+
+//   var cards = []; // deck
+//   var shuffledCards = []; // deck shuffled
+  
+//  for(var i=0; i<values.length;i++){
+//    cards.push({value:values[i], suit:"hearts"})
+//  } 
+//   for(var n=0; n<values.length;n++){
+//    cards.push({value:values[n], suit:"diamonds"})
+//  } 
+//   for(var s=0; s<values.length;s++){
+//    cards.push({value:values[s], suit:"spades"})
+//  } 
+//   for(var c=0; c<values.length;c++){
+//    cards.push({value:values[c], suit:"clubs"})
+//  } 
+//   return cards;
+
+  
+  
+// }
+//   console.log(deck_o_cards());
 
 
   // 2. Shuffle the cards

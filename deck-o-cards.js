@@ -11,11 +11,32 @@ function deck_o_cards() {
   // Hint: use 2 for loops
 
 
+  //Example for loop:
+  // for(var i = 0; i <dogs.length; i++)
+
+var suits = []; // deck
+  for(var i = 0; i < suits.length; i++) {
+var cards ={};
+  for(var n = 0; n < values.length; n++){
+    cards = {
+      suit: suit[i],
+      value: values[n]
+    }
+  }
+}
+
+
+
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
 
 
+
+
   // Pull the top card from the newly shuffledCards
+
+
+
 
 
   // 3. Print the results:

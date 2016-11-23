@@ -5,6 +5,16 @@ function deck_o_cards() {
   var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
   var cards = []; // deck
+
+  for (i=0, x = values.length; i < x; i++) {
+    cards.push({value: values[i], suit: 'hearts'});
+    cards.push({value: values[i], suit: 'diamonds'});
+    cards.push({value: values[i], suit: 'clubs'});
+    cards.push({value: values[i], suit: 'spades'});
+  }
+  return cards;
+}
+
   var shuffledCards = []; // deck shuffled
 
   // Make 52 card objects and store them in the "cards" array
@@ -14,6 +24,8 @@ function deck_o_cards() {
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
 
+var shuffledCards = shuffle(deck_o_cards());
+
 
   // Pull the top card from the newly shuffledCards
 
@@ -22,6 +34,7 @@ function deck_o_cards() {
   // "The deck has {n} cards"
   // "The top card is the {value} of {suit}"
 
+console.log(shuffledCards.length);
 }
 
 

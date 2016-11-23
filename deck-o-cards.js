@@ -9,11 +9,22 @@ function deck_o_cards() {
 
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
+  console.log('cards before loop: ', cards);
+  for (var i=0; i < values.length; i++) {
+    cards.push( { suit: 'hearts', card: values[i] } )
+    cards.push({ suit: 'diamonds', card: values[i] })
+    cards.push({ suit: 'spades', card: values[i] })
+    cards.push({ suit: 'clubs', card: values[i] })
+  }
+  console.log('cards after loop: ', cards);
 
+
+
+}
 
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
-
+shuffledCards = shuffledCards(cards)
 
   // Pull the top card from the newly shuffledCards
 

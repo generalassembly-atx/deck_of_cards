@@ -4,16 +4,39 @@ function deck_o_cards() {
   var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
   var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
-  var cards = []; // deck
-  var shuffledCards = []; // deck shuffled
-
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
+  var cards = []; // deck
+  for (i=0; i<values.length; i++) {
+    var newValues=[i];
+  for (j=0; j<suits.length; j++) {
+    var newSuits=[j];
+  }
+}
 
 
   // 2. Shuffle the cards
   // Hint: shuffle function is already defined below
+  var shuffledCards = []; // deck shuffled
+  function shuffle(cards) {
+      var counter = cards.length, temp, index;
 
+      // While there are elements in the array
+      while (counter > 0) {
+          // Pick a random index
+          index = Math.floor(Math.random() * counter);
+
+          // Decrease counter by 1
+          counter--;
+
+          // And swap the last element with it
+          temp = card[counter];
+          card[counter] = card[index];
+          card[index] = temp;
+      }
+
+      return array;
+  }
 
   // Pull the top card from the newly shuffledCards
 
@@ -28,7 +51,7 @@ function deck_o_cards() {
 
 // Fisher-Yates Shuffle
 // http://stackoverflow.com/a/6274398
-function shuffle(array) {
+/*function shuffle(array) {
     var counter = array.length, temp, index;
 
     // While there are elements in the array
@@ -47,3 +70,13 @@ function shuffle(array) {
 
     return array;
 }
+*/
+
+
+/* in class they said....
+cards.push({card:values[i], suit:"hearts"})
+cards.push({card:values[i], suit:"diamonds"})
+cards.push({card:values[i], suit:"clubs"})
+cards.push({card:values[i], suit:"spades"})
+}
+*/
